@@ -16,14 +16,63 @@ const Home = () => {
   const clickHandler = (x: number, y: number) => {
     console.log(x, y);
     const newBoard = structuredClone(board);
-    if (board[y + 1][x] === 2 / turnColor) {
+    if (board[y + 1][x] === 2 / turnColor && board[y + 2][x] === turnColor) {
       newBoard[y][x] = turnColor;
+      newBoard[y + 1][x] = turnColor;
       setTurnColor(2 / turnColor);
     }
-    newBoard[y][x] = turnColor;
-    setTurnColor(2 / turnColor);
+
+    if (board[y - 1][x] === 2 / turnColor && board[y - 2][x] === turnColor) {
+      newBoard[y][x] = turnColor;
+      newBoard[y - 1][x] = turnColor;
+      setTurnColor(2 / turnColor);
+    }
+
+    if (board[y][x + 1] === 2 / turnColor && board[y][x + 2] === turnColor) {
+      newBoard[y][x] = turnColor;
+      newBoard[y][x + 1] = turnColor;
+      setTurnColor(2 / turnColor);
+    }
+
+    if (board[y][x - 1] === 2 / turnColor && board[y][x - 2] === turnColor) {
+      newBoard[y][x] = turnColor;
+      newBoard[y][x - 1] = turnColor;
+      setTurnColor(2 / turnColor);
+    }
+
+    if (board[y + 1][x - 1] === 2 / turnColor && board[y + 2][x - 2] === turnColor) {
+      newBoard[y][x] = turnColor;
+      newBoard[y + 1][x - 1] = turnColor;
+      setTurnColor(2 / turnColor);
+    }
+
+    if (board[y - 1][x - 1] === 2 / turnColor && board[y - 2][x - 2] === turnColor) {
+      newBoard[y][x] = turnColor;
+      newBoard[y - 1][x - 1] = turnColor;
+      setTurnColor(2 / turnColor);
+    }
+
+    if (board[y + 1][x + 1] === 2 / turnColor && board[y + 2][x + 2] === turnColor) {
+      newBoard[y][x] = turnColor;
+      newBoard[y + 1][x + 1] = turnColor;
+      setTurnColor(2 / turnColor);
+    }
+
+    if (board[y - 1][x + 1] === 2 / turnColor && board[y - 2][x + 2] === turnColor) {
+      newBoard[y][x] = turnColor;
+      newBoard[y + 1][x + 1] = turnColor;
+      setTurnColor(2 / turnColor);
+    }
+
     setBoard(newBoard);
   };
+
+let search = 
+
+  for (let i = 0; i < search.length; i++) {
+    console.log(search[i]);
+  }
+
   return (
     <div className={styles.container}>
       <div className={styles.board}>
