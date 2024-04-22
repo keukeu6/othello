@@ -67,11 +67,7 @@ const Home = () => {
     setBoard(newBoard);
   };
 
-let search =
 
-  for (let i = 0; i < search.length; i++) {
-    console.log(search[i]);
-  }
 
   return (
     <div className={styles.container}>
