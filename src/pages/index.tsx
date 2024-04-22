@@ -16,7 +16,8 @@ const Home = () => {
   const clickHandler = (x: number, y: number) => {
     console.log(x, y);
     const newBoard = structuredClone(board);
-    if (board[y + 1][x] === 2 / turnColor && board[y + 2][x] === turnColor) {
+
+     if (board[y + 1] [x]=== 2 / turnColor && board[y + 2][x] === turnColor) {
       newBoard[y][x] = turnColor;
       newBoard[y + 1][x] = turnColor;
       setTurnColor(2 / turnColor);
@@ -60,14 +61,12 @@ const Home = () => {
 
     if (board[y - 1][x + 1] === 2 / turnColor && board[y - 2][x + 2] === turnColor) {
       newBoard[y][x] = turnColor;
-      newBoard[y + 1][x + 1] = turnColor;
+      newBoard[y - 1][x + 1] = turnColor;
       setTurnColor(2 / turnColor);
     }
 
     setBoard(newBoard);
   };
-
-
 
   return (
     <div className={styles.container}>
