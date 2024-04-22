@@ -67,7 +67,7 @@ const Home = () => {
     setBoard(newBoard);
   };
 
-let search = 
+let search =
 
   for (let i = 0; i < search.length; i++) {
     console.log(search[i]);
